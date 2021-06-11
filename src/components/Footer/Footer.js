@@ -10,10 +10,10 @@ import { useHistory } from 'react-router-dom';
 
 const useStyles = makeStyles({
   root: {
-    width: 500,
-    position: "fixed",
+    width: '100%',
+    position: 'fixed',
     bottom: 0,
-    backgroundColor: "#2d313a",
+    backgroundColor: '#2d313a',
     zindex: 100,
   },
 });
@@ -24,10 +24,10 @@ export default function SimpleBottomNavigation() {
   const history = useHistory();
 
   useEffect(() => {
-    if (value === 0) history.push("/");
-    else if (value === 1) history.push("/movies");
-    else if (value === 2) history.push("/series");
-    if (value === 3) history.push("/search");
+    if (value === 0) history.push('/');
+    else if (value === 1) history.push('/movies');
+    else if (value === 2) history.push('/series');
+    if (value === 3) history.push('/search');
   }, [value, history]);
 
   return (
@@ -39,10 +39,26 @@ export default function SimpleBottomNavigation() {
       showLabels
       className={classes.root}
     >
-      <BottomNavigationAction style={{ color: "white" }} label="Trending" icon={<WhatshotIcon />} />
-      <BottomNavigationAction style={{ color: "white" }} label="Movies" icon={<MovieIcon />} />
-      <BottomNavigationAction style={{ color: "white" }} label="TV Series" icon={<TvIcon />} />
-      <BottomNavigationAction style={{ color: "white" }} label="Search" icon={<SearchIcon />} />
+      <BottomNavigationAction
+        style={{ color: 'white' }}
+        label="Trending"
+        icon={<WhatshotIcon />}
+      />
+      <BottomNavigationAction
+        style={{ color: 'white' }}
+        label="Movies"
+        icon={<MovieIcon />}
+      />
+      <BottomNavigationAction
+        style={{ color: 'white' }}
+        label="TV Series"
+        icon={<TvIcon />}
+      />
+      <BottomNavigationAction
+        style={{ color: 'white' }}
+        label="Search"
+        icon={<SearchIcon />}
+      />
     </BottomNavigation>
   );
 }
