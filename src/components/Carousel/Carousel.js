@@ -1,6 +1,5 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import { img_300, noPicture } from '../../config/config';

@@ -6,18 +6,21 @@ import Trending from './Pages/Trending/Trending.js';
 import Movies from './Pages/Movies/Movies.js';
 import Series from './Pages/Series/Series.js';
 import Search from './Pages/Search/Search.js';
+import { Container } from '@material-ui/core';
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <div className="app">
-        <Switch>
-          <Route path="/" component={Trending} exact />
-          <Route path="/movies" component={Movies} />
-          <Route path="/series" component={Series} />
-          <Route path="/search" component={Search} />
-        </Switch>
+        <Container>
+          <Switch>
+            <Route path="/" component={Trending} exact />
+            <Route path="/movies" component={Movies} />
+            <Route path="/series" component={Series} />
+            <Route path="/search" component={Search} />
+          </Switch>
+        </Container>
       </div>
       <Footer />
     </BrowserRouter>

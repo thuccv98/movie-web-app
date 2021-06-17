@@ -8,8 +8,7 @@ import {
 } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import axios from 'axios';
-import React, { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import CustomPagination from '../../components/Pagination/CustomPagination';
 import SingleContent from '../../components/SingleContent/SingleContent';
 
@@ -53,7 +52,13 @@ const Search = () => {
   return (
     <div>
       <ThemeProvider theme={darkTheme}>
-        <div style={{ display: 'flex', margin: '15px 0' }}>
+        <div
+          style={{
+            display: 'flex',
+            marginTop: '30px',
+            marginBottom: '10px',
+          }}
+        >
           <TextField
             style={{ flex: 1 }}
             className="searchBox"
@@ -96,9 +101,9 @@ const Search = () => {
               vote_average={item.vote_average}
             />
           ))}
-        {searchText &&
+        {/* {searchText &&
           !content &&
-          (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2>)}
+          (type ? <h2>No Series Found</h2> : <h2>No Movies Found</h2>)} */}
       </div>
       {numOfPage > 1 && (
         <CustomPagination onPageChange={setPage} numofPages={numOfPage} />

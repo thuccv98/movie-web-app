@@ -22,6 +22,7 @@ const Trending = () => {
         console.log('Failed to fetch API:', error.message);
       }
     }
+    window.scroll(0, 0);
     fetchTrending();
   }, [page]);
 

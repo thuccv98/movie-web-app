@@ -27,6 +27,7 @@ const Series = () => {
       }
     }
 
+    window.scroll(0, 0);
     fetchMovies();
   }, [page, genresforURL]);
 

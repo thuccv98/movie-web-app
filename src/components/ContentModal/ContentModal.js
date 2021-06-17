@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import axios from 'axios';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import {
   img_500,
   unavailable,
@@ -36,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function ContentModal({ children, media_type, id }) {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = useState(false);
   const [content, setContent] = useState();
   const [video, setVideo] = useState();
 
@@ -130,12 +128,15 @@ export default function ContentModal({ children, media_type, id }) {
                   <span className="contentModal_description">
                     {content.overview}
                   </span>
-                  <Carousel media_type={media_type} id={id} />
+                  <div>
+                    <Carousel media_type={media_type} id={id} />
+                  </div>
+
                   <Button
                     variant="contained"
                     startIcon={<YouTubeIcon />}
                     color="secondary"
-                    target="_blamk"
+                    target="_blank"
                     href={`https://www.youtube.com/watch?v=${video}`}
                   >
                     Watch the Trainer
